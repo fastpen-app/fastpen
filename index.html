@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastPen — fast, private, on-device dictation for Windows</title>
+<meta name="description" content="FastPen types what you say into any Windows app. 100% on-device speech recognition — no cloud, no account, no character limits. 25 languages. Free.">
+<style>
+  :root{
+    --bg:#181114; --bg2:#221a1e; --card:#2a2126; --line:#453c38;
+    --text:#f0eae6; --dim:#a09890; --accent:#ff8c2e; --accent2:#ffb066;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.15rem;color:var(--text)}
+  .logo svg{border-radius:9px}
+  .lang a{color:var(--dim);margin-left:12px;font-size:.9rem}
+  .lang a.act{color:var(--text);font-weight:600}
+  .hero{text-align:center;padding:72px 0 56px}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p.sub{color:var(--dim);font-size:1.15rem;margin:18px auto 34px;max-width:560px}
+  .btn{display:inline-block;background:var(--accent);color:#1a1005;font-weight:700;
+       padding:14px 30px;border-radius:12px;font-size:1.05rem}
+  .btn:hover{background:var(--accent2);text-decoration:none}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);font-weight:500}
+  .meta{color:var(--dim);font-size:.85rem;margin-top:14px}
+  .demo{margin:56px auto 0;max-width:640px;background:var(--bg2);border:1px solid var(--line);
+        border-radius:16px;padding:22px 26px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .demo .t{color:var(--dim);font-size:.8rem;display:flex;justify-content:space-between;align-items:center}
+  .dots span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
+             margin-left:4px;animation:pulse 1.2s infinite}
+  .dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+  .dots span:nth-child(4){animation-delay:.6s}.dots span:nth-child(5){animation-delay:.8s}
+  @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+  .demo .txt{margin-top:10px;font-size:1.05rem}
+  .demo .txt .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);
+                     vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  section{padding:56px 0}
+  h2{font-size:1.7rem;margin-bottom:28px;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:1.05rem;margin-bottom:8px}
+  .card h3 .ic{margin-right:8px}
+  .card p{color:var(--dim);font-size:.95rem}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:center}
+  .step .n{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#1a1005;
+           font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+  .step p{color:var(--dim)}
+  .step b{color:var(--text)}
+  kbd{background:var(--card);border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;
+      padding:2px 8px;font-family:inherit;font-size:.9em}
+  .privacy{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
+  .privacy p{max-width:640px;margin:0 auto;color:var(--dim)}
+  .dl{text-align:center}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:14px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--dim);margin-top:8px;font-size:.95rem}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--dim);font-size:.85rem;
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
+      FastPen
+    </div>
+    <nav class="lang"><a class="act" href="./">EN</a><a href="hu.html">HU</a></nav>
+  </header>
+
+  <div class="hero">
+    <h1>Type at the <em>speed of speech</em>.</h1>
+    <p class="sub">FastPen is fast, private dictation for Windows. Press a hotkey, speak,
+      and your words appear in any app — email, Word, browser, chat.</p>
+    <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
+      Download for Windows — free</a>
+    <div class="meta">v0.1.0 · Windows 10/11 (64-bit) · 9 MB ·
+      <a href="https://github.com/fastpen-app/fastpen/releases">all releases</a></div>
+
+    <div class="demo">
+      <div class="t">FastPen — dictating <span class="dots"><span></span><span></span><span></span><span></span><span></span></span></div>
+      <div class="txt">Meeting notes: the deadline moves to Friday, and the demo goes to the client first.<span class="cursor"></span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Why FastPen?</h2>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🔒</span>100% on-device</h3>
+        <p>Speech recognition runs on your computer. No cloud, no account, no subscription — your voice never leaves your machine.</p></div>
+      <div class="card"><h3><span class="ic">🌍</span>25 languages</h3>
+        <p>Powered by NVIDIA's Parakeet v3 model: English, German, French, Spanish, Hungarian and 20 more — with automatic language detection and punctuation.</p></div>
+      <div class="card"><h3><span class="ic">⚡</span>Near real-time</h3>
+        <p>Text appears the moment you pause. Six seconds of speech is transcribed in about 0.2 seconds on a modern CPU.</p></div>
+      <div class="card"><h3><span class="ic">⌨️</span>Works everywhere</h3>
+        <p>FastPen types straight into whatever app has focus, like a very fast invisible keyboard.</p></div>
+      <div class="card"><h3><span class="ic">∞</span>No limits</h3>
+        <p>It's your CPU — dictate as much as you want. No word counts, no monthly quotas, no premium tier.</p></div>
+      <div class="card"><h3><span class="ic">📦</span>Tiny download</h3>
+        <p>The app is a 9 MB download. The speech model (~465 MB) is fetched automatically on first run.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd></p></div>
+      <div class="step"><div class="n">2</div><p><b>Speak naturally</b> — pause whenever you like</p></div>
+      <div class="step"><div class="n">3</div><p>Your words are <b>typed into the active window</b></p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="privacy">
+      <h2>Private by design</h2>
+      <p>FastPen contains no analytics, no telemetry and makes no network requests other than
+         downloading the speech model from GitHub on first start. What you say is processed
+         in memory, typed into your app, and forgotten.</p>
+    </div>
+  </section>
+
+  <section class="dl" id="download">
+    <h2>Download</h2>
+    <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
+      FastPen-win64.zip — v0.1.0</a>
+    <div class="meta">Unzip anywhere and run <b>FastPen.exe</b>. Needs Windows 10 (1803+) or 11, 64-bit, and a microphone.<br>
+      If you get a “VCRUNTIME140.dll missing” error, install the
+      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>.</div>
+  </section>
+
+  <section id="support">
+    <h2>Support the project</h2>
+    <div class="privacy">
+      <p>FastPen is free and built by one developer. If it saves you time,
+         you can support development here soon — donation options are on the way. 💛</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details><summary>Is it really free?</summary>
+      <p>Yes. FastPen is free to download and use, with no feature gates. If it becomes popular,
+         a paid version with extra features may follow — dictation will stay free.</p></details>
+    <details><summary>Does my voice get uploaded anywhere?</summary>
+      <p>No. Recognition runs entirely on your CPU using the open Parakeet v3 model.
+         FastPen works offline once the model is downloaded.</p></details>
+    <details><summary>Which languages are supported?</summary>
+      <p>25 European languages including English, German, French, Spanish, Italian, Polish,
+         Hungarian, Czech, Romanian and Ukrainian. The language is detected automatically.
+         Whisper models are also supported for even more languages.</p></details>
+    <details><summary>What are the system requirements?</summary>
+      <p>Windows 10 (version 1803 or newer) or Windows 11, 64-bit. Any reasonably modern CPU
+         works — no GPU needed. About 700 MB of disk space after the model download.</p></details>
+    <details><summary>Is FastPen open source?</summary>
+      <p>Not currently — but you don't have to take our privacy claims on faith. FastPen makes
+         no network requests except downloading the model on first run, and that's verifiable:
+         watch it with a firewall, or simply block it from the internet entirely. It keeps
+         working offline.</p></details>
+    <details><summary>Why does Windows warn me when I run it?</summary>
+      <p>FastPen is a new app from a small developer and isn't code-signed yet, so SmartScreen
+         may show a warning. Click “More info” → “Run anyway”. Code signing is planned.</p></details>
+  </section>
+
+  <footer>
+    <div>© 2026 FastPen · Budapest</div>
+    <div><a href="https://github.com/fastpen-app/fastpen">GitHub</a> ·
+         <a href="https://github.com/fastpen-app/fastpen/issues">Report a problem</a></div>
+  </footer>
+</div>
+</body>
+</html>

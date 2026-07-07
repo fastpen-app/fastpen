@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FastPen — gyors, privát, helyben futó diktálás Windowsra</title>
+<meta name="description" content="A FastPen bármely Windows-alkalmazásba begépeli, amit mondasz. 100%-ban a gépeden futó beszédfelismerés — se felhő, se fiók, se karakterlimit. 25 nyelv, magyarul is. Ingyenes.">
+<style>
+  :root{
+    --bg:#181114; --bg2:#221a1e; --card:#2a2126; --line:#453c38;
+    --text:#f0eae6; --dim:#a09890; --accent:#ff8c2e; --accent2:#ffb066;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+  header{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.15rem;color:var(--text)}
+  .logo svg{border-radius:9px}
+  .lang a{color:var(--dim);margin-left:12px;font-size:.9rem}
+  .lang a.act{color:var(--text);font-weight:600}
+  .hero{text-align:center;padding:72px 0 56px}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;letter-spacing:-.02em}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p.sub{color:var(--dim);font-size:1.15rem;margin:18px auto 34px;max-width:560px}
+  .btn{display:inline-block;background:var(--accent);color:#1a1005;font-weight:700;
+       padding:14px 30px;border-radius:12px;font-size:1.05rem}
+  .btn:hover{background:var(--accent2);text-decoration:none}
+  .meta{color:var(--dim);font-size:.85rem;margin-top:14px}
+  .demo{margin:56px auto 0;max-width:640px;background:var(--bg2);border:1px solid var(--line);
+        border-radius:16px;padding:22px 26px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .demo .t{color:var(--dim);font-size:.8rem;display:flex;justify-content:space-between;align-items:center}
+  .dots span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
+             margin-left:4px;animation:pulse 1.2s infinite}
+  .dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+  .dots span:nth-child(4){animation-delay:.6s}.dots span:nth-child(5){animation-delay:.8s}
+  @keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+  .demo .txt{margin-top:10px;font-size:1.05rem}
+  .demo .txt .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent);
+                     vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  section{padding:56px 0}
+  h2{font-size:1.7rem;margin-bottom:28px;text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:1.05rem;margin-bottom:8px}
+  .card h3 .ic{margin-right:8px}
+  .card p{color:var(--dim);font-size:.95rem}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:center}
+  .step .n{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#1a1005;
+           font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+  .step p{color:var(--dim)}
+  .step b{color:var(--text)}
+  kbd{background:var(--card);border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;
+      padding:2px 8px;font-family:inherit;font-size:.9em}
+  .privacy{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:32px;text-align:center}
+  .privacy p{max-width:640px;margin:0 auto;color:var(--dim)}
+  .dl{text-align:center}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          padding:14px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--dim);margin-top:8px;font-size:.95rem}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--dim);font-size:.85rem;
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
+      FastPen
+    </div>
+    <nav class="lang"><a href="./">EN</a><a class="act" href="hu.html">HU</a></nav>
+  </header>
+
+  <div class="hero">
+    <h1>Írj a <em>beszéd sebességével</em>.</h1>
+    <p class="sub">A FastPen gyors, privát diktálás Windowsra. Nyomj egy gyorsbillentyűt,
+      beszélj, és a szöveg megjelenik bármelyik alkalmazásban — levélben, Wordben, böngészőben, chatben.</p>
+    <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
+      Letöltés Windowsra — ingyenes</a>
+    <div class="meta">v0.1.0 · Windows 10/11 (64 bit) · 9 MB ·
+      <a href="https://github.com/fastpen-app/fastpen/releases">összes kiadás</a></div>
+
+    <div class="demo">
+      <div class="t">FastPen — diktálás <span class="dots"><span></span><span></span><span></span><span></span><span></span></span></div>
+      <div class="txt">Emlékeztető: a határidő péntekre tolódik, a demót előbb az ügyfél kapja meg.<span class="cursor"></span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Miért a FastPen?</h2>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🔒</span>100%-ban a gépeden</h3>
+        <p>A beszédfelismerés a saját gépeden fut. Se felhő, se fiók, se előfizetés — a hangod soha nem hagyja el a számítógépedet.</p></div>
+      <div class="card"><h3><span class="ic">🌍</span>25 nyelv, magyarul is</h3>
+        <p>Az NVIDIA Parakeet v3 modelljével: magyar, angol, német, francia, spanyol és még 20 nyelv — automatikus nyelvfelismeréssel és írásjelekkel.</p></div>
+      <div class="card"><h3><span class="ic">⚡</span>Közel valós idejű</h3>
+        <p>A szöveg abban a pillanatban megjelenik, ahogy szünetet tartasz. Hat másodpercnyi beszédet kb. 0,2 mp alatt ír át egy modern processzor.</p></div>
+      <div class="card"><h3><span class="ic">⌨️</span>Mindenhol működik</h3>
+        <p>A FastPen abba az ablakba gépel, amelyik éppen aktív — mint egy nagyon gyors, láthatatlan billentyűzet.</p></div>
+      <div class="card"><h3><span class="ic">∞</span>Nincs korlát</h3>
+        <p>A te processzorod dolgozik — annyit diktálsz, amennyit akarsz. Se szószám, se havi keret, se prémium csomag.</p></div>
+      <div class="card"><h3><span class="ic">📦</span>Pici letöltés</h3>
+        <p>Az app 9 MB. A beszédfelismerő modellt (~465 MB) első indításkor automatikusan letölti.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Így működik</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><p>Nyomd meg: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd></p></div>
+      <div class="step"><div class="n">2</div><p><b>Beszélj természetesen</b> — tarts szünetet, amikor jólesik</p></div>
+      <div class="step"><div class="n">3</div><p>A szavaid <b>begépelődnek az aktív ablakba</b></p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="privacy">
+      <h2>Alapból privát</h2>
+      <p>A FastPenben nincs analitika, nincs telemetria, és az első indításkori modell-letöltésen
+         kívül semmilyen hálózati kérést nem küld. Amit mondasz, a memóriában dolgozódik fel,
+         begépelődik az alkalmazásodba — aztán nyoma sincs.</p>
+    </div>
+  </section>
+
+  <section class="dl" id="download">
+    <h2>Letöltés</h2>
+    <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
+      FastPen-win64.zip — v0.1.0</a>
+    <div class="meta">Csomagold ki bárhova, és indítsd a <b>FastPen.exe</b>-t. Windows 10 (1803+) vagy 11 kell, 64 bit, és egy mikrofon.<br>
+      Ha „VCRUNTIME140.dll hiányzik” hibát kapsz, telepítsd a
+      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>-t.</div>
+  </section>
+
+  <section id="support">
+    <h2>Támogasd a projektet</h2>
+    <div class="privacy">
+      <p>A FastPen ingyenes, és egyetlen fejlesztő készíti. Ha időt spórol neked,
+         hamarosan itt tudod majd támogatni a fejlesztést. 💛</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Gyakori kérdések</h2>
+    <details><summary>Tényleg ingyenes?</summary>
+      <p>Igen. A FastPen ingyenesen letölthető és használható, funkciókorlátok nélkül. Ha népszerű
+         lesz, később jöhet fizetős változat extra funkciókkal — a diktálás ingyenes marad.</p></details>
+    <details><summary>Feltöltődik valahová a hangom?</summary>
+      <p>Nem. A felismerés teljes egészében a processzorodon fut a nyílt Parakeet v3 modellel.
+         A modell letöltése után a FastPen internet nélkül is működik.</p></details>
+    <details><summary>Milyen nyelveket tud?</summary>
+      <p>25 európai nyelvet, köztük a magyart, angolt, németet, franciát, spanyolt, olaszt,
+         lengyelt, csehet, románt és ukránt. A nyelvet automatikusan felismeri. Whisper-modellekkel
+         még több nyelv érhető el.</p></details>
+    <details><summary>Mik a rendszerkövetelmények?</summary>
+      <p>Windows 10 (1803-as vagy újabb verzió) vagy Windows 11, 64 bit. Bármilyen normális, mai
+         processzorral megy — videokártya nem kell. A modell letöltése után kb. 700 MB tárhely.</p></details>
+    <details><summary>Nyílt forráskódú a FastPen?</summary>
+      <p>Jelenleg nem — de az adatvédelmi ígéreteinket nem kell elhinned: ellenőrizni tudod.
+         A FastPen az első indításkori modell-letöltésen kívül semmilyen hálózati kérést nem
+         küld — figyeld meg tűzfallal, vagy egyszerűen tiltsd le a netről teljesen.
+         Offline is ugyanúgy működik.</p></details>
+    <details><summary>Miért figyelmeztet a Windows indításkor?</summary>
+      <p>A FastPen új app egy kis fejlesztőtől, és még nincs kódaláírása, ezért a SmartScreen
+         figyelmeztethet. Kattints: „További információ” → „Futtatás mindenképp”. A kódaláírás tervben van.</p></details>
+  </section>
+
+  <footer>
+    <div>© 2026 FastPen · Budapest</div>
+    <div><a href="https://github.com/fastpen-app/fastpen">GitHub</a> ·
+         <a href="https://github.com/fastpen-app/fastpen/issues">Hibabejelentés</a></div>
+  </footer>
+</div>
+</body>
+</html>
