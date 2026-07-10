@@ -73,7 +73,7 @@
       <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
       FastPen
     </div>
-    <nav class="lang"><a class="act" href="./">EN</a><a href="hu.html">HU</a></nav>
+    <nav class="lang"><a class="act" href="index.html">EN</a><a href="hu.html">HU</a></nav>
   </header>
 
   <div class="hero">
@@ -82,7 +82,8 @@
       and your words appear in any app — email, Word, browser, chat.</p>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       Download for Windows — free</a>
-    <div class="meta">v0.1.1 · Windows 10/11 (64-bit) · 9 MB ·
+    <div class="meta">v0.2.0 · Windows 10/11 (64-bit) · 9.5 MB ·
+      <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">32-bit build</a> ·
       <a href="https://github.com/fastpen-app/fastpen/releases">all releases</a></div>
 
     <div class="demo">
@@ -96,16 +97,16 @@
     <div class="grid">
       <div class="card"><h3><span class="ic">🔒</span>100% on-device</h3>
         <p>Speech recognition runs on your computer. No cloud, no account, no subscription — your voice never leaves your machine.</p></div>
-      <div class="card"><h3><span class="ic">🌍</span>25 languages</h3>
-        <p>Powered by NVIDIA's Parakeet v3 model: English, German, French, Spanish, Hungarian and 20 more — with automatic language detection and punctuation.</p></div>
+      <div class="card"><h3><span class="ic">🌍</span>Two models, 25 languages</h3>
+        <p>Whisper turbo: the most accurate, great for mixed-language dictation too. Parakeet: the fastest, 25 languages with automatic detection. Both download in one click, right from the app.</p></div>
+      <div class="card"><h3><span class="ic">🗣️</span>Voice commands</h3>
+        <p>Say “enter” — and Enter is pressed. “New line”, “tab” and “backspace” work too: dictate and send entirely hands-free.</p></div>
+      <div class="card"><h3><span class="ic">✨</span>AI cleanup</h3>
+        <p>An optional local AI (Ollama) polishes the raw transcript and spells your custom words — brand names, jargon — exactly right. This runs on your machine too.</p></div>
       <div class="card"><h3><span class="ic">⚡</span>Near real-time</h3>
         <p>Text appears the moment you pause. Six seconds of speech is transcribed in about 0.2 seconds on a modern CPU.</p></div>
-      <div class="card"><h3><span class="ic">⌨️</span>Works everywhere</h3>
-        <p>FastPen types straight into whatever app has focus, like a very fast invisible keyboard.</p></div>
-      <div class="card"><h3><span class="ic">∞</span>No limits</h3>
-        <p>It's your CPU — dictate as much as you want. No word counts, no monthly quotas, no premium tier.</p></div>
-      <div class="card"><h3><span class="ic">📦</span>Tiny download</h3>
-        <p>The app is a 9 MB download. The speech model (~465 MB) is fetched automatically on first run.</p></div>
+      <div class="card"><h3><span class="ic">⌨️</span>Everywhere, no limits</h3>
+        <p>FastPen types straight into whatever app has focus. It's your CPU — no word counts, no monthly quotas, no premium tier.</p></div>
     </div>
   </section>
 
@@ -118,29 +119,70 @@
     </div>
   </section>
 
+  <section id="tips">
+    <h2>Tips for best results</h2>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🎤</span>Mic at 5–10 cm (2–4 in)</h3>
+        <p>Microphone distance matters more than any setting. A boom headset is the best
+           choice: the distance stays fixed, so the quality stays consistent. We test
+           FastPen with a Poly Blackwire 3210 USB headset.</p></div>
+      <div class="card"><h3><span class="ic">🧠</span>Pick the model for the job</h3>
+        <p>Whisper turbo delivers the most accurate text, with the recognition language
+           pinned — and handles mixed-language dictation too. Parakeet is the fastest:
+           ideal for slower machines and voice commands.</p></div>
+      <div class="card"><h3><span class="ic">⏱️</span>Command rhythm</h3>
+        <p>Say voice commands on their own: sentence — short pause — “enter”. The command
+           arrives as its own segment and is recognized reliably.</p></div>
+      <div class="card"><h3><span class="ic">🎚️</span>Headset? Sensitivity 0.40</h3>
+        <p>With a headset mic, set the VAD threshold to 0.40 in Settings; with a desktop
+           microphone the default 0.50 works well.</p></div>
+    </div>
+  </section>
+
   <section>
     <div class="privacy">
       <h2>Private by design</h2>
       <p>FastPen contains no analytics, no telemetry and makes no network requests other than
          downloading the speech model from GitHub on first start. What you say is processed
          in memory, typed into your app, and forgotten.</p>
+      <p style="margin-top:14px">And private doesn't mean compromised: measured on identical
+         reference audio, FastPen's local recognition ties the built-in cloud dictation of
+         Windows on meaningful errors.</p>
     </div>
   </section>
 
   <section class="dl" id="download">
     <h2>Download</h2>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
-      FastPen-win64.zip — v0.1.1</a>
+      FastPen-win64.zip — v0.2.0</a>
     <div class="meta">Unzip anywhere and run <b>FastPen.exe</b>. Needs Windows 10 (1803+) or 11, 64-bit, and a microphone.<br>
       If you get a “VCRUNTIME140.dll missing” error, install the
-      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>.</div>
+      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>.<br>
+      For older 32-bit PCs:
+      <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">FastPen-win32.zip</a>
+      — use the Parakeet model there.</div>
+  </section>
+
+  <section id="roadmap">
+    <h2>What's next</h2>
+    <p style="text-align:center;color:var(--dim);max-width:620px;margin:0 auto 28px">FastPen is under active development. A few things on the roadmap:</p>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🗣️</span>More reliable voice commands</h3>
+        <p>Even more accurate recognition of short commands (send, new line, tab).</p></div>
+      <div class="card"><h3><span class="ic">🪟</span>Per-app profiles</h3>
+        <p>Behavior tailored per window — different settings for chat vs. a text editor.</p></div>
+      <div class="card"><h3><span class="ic">✨</span>Sharper recognition</h3>
+        <p>Ongoing improvements to Hungarian and mixed-language accuracy.</p></div>
+    </div>
   </section>
 
   <section id="support">
     <h2>Support the project</h2>
     <div class="privacy">
       <p>FastPen is free and built by one developer. If it saves you time,
-         you can support development here soon — donation options are on the way. 💛</p>
+         you can support development with a coffee. 💛</p>
+      <a class="btn" style="margin-top:24px" href="https://ko-fi.com/fastpen" target="_blank" rel="noopener">☕ Support me on Ko-fi</a>
+      <p style="margin-top:18px;font-size:.82rem">FastPen is completely free. Donations are entirely voluntary and don't unlock any features, licenses or extra support — just a thank-you that helps fund future development.</p>
     </div>
   </section>
 
@@ -153,12 +195,38 @@
       <p>No. Recognition runs entirely on your CPU using the open Parakeet v3 model.
          FastPen works offline once the model is downloaded.</p></details>
     <details><summary>Which languages are supported?</summary>
-      <p>25 European languages including English, German, French, Spanish, Italian, Polish,
-         Hungarian, Czech, Romanian and Ukrainian. The language is detected automatically.
-         Whisper models are also supported for even more languages.</p></details>
+      <p>The Parakeet model covers 25 European languages including English, German, French,
+         Spanish, Italian, Polish, Hungarian, Czech, Romanian and Ukrainian, with automatic
+         detection. The Whisper turbo model (downloadable from the app) adds even more
+         languages, and the language can be pinned.</p></details>
+    <details><summary>Which model should I pick?</summary>
+      <p>Whisper turbo delivers the most accurate text — we recommend it for prose and for
+         mixed-language dictation alike, with the recognition language pinned. Parakeet
+         (the default) is many times faster and recognizes voice commands most reliably —
+         pick it on slower machines. Both models are downloaded by the app when you select
+         them (~1 GB and ~465 MB).</p></details>
+    <details><summary>What are the voice commands?</summary>
+      <p>Said on their own, with a short pause before and after: “enter” → Enter;
+         “new line” → Shift+Enter; “tab” → Tab; “backspace” → deletes the last word.
+         They work most reliably with the Parakeet model.</p></details>
+    <details><summary>Can I dictate to AI agents (Claude, Codex)?</summary>
+      <p>That's one of the main use cases: press the hotkey (push-to-talk works great),
+         speak your prompt, then say “enter” — and the message is sent hands-free.
+         For mixed-language prompts use Whisper turbo. Agents understand the raw transcript
+         just fine, so you can leave AI cleanup off.</p></details>
     <details><summary>What are the system requirements?</summary>
       <p>Windows 10 (version 1803 or newer) or Windows 11, 64-bit. Any reasonably modern CPU
-         works — no GPU needed. About 700 MB of disk space after the model download.</p></details>
+         works — no GPU needed. About 700 MB of disk space with the Parakeet model
+         (about 1.7 GB with Whisper turbo as well). A separate build for older 32-bit
+         Windows is also available — use the Parakeet model there.</p></details>
+    <details><summary>Can I use Bluetooth earbuds?</summary>
+      <p>Not recommended for dictation. When the earbuds' microphone is active, Bluetooth
+         switches to the hands-free profile with heavily compressed, phone-call-quality
+         audio — recognition accuracy drops noticeably. On Windows 10 there is no way
+         around this (the higher-quality LE Audio is only available on Windows 11 with
+         compatible earbuds). Use a wired or USB boom headset instead. If you do use
+         Bluetooth: untick “Enable audio enhancements” in the microphone's advanced
+         settings.</p></details>
     <details><summary>Is FastPen open source?</summary>
       <p>Not currently — but you don't have to take our privacy claims on faith. FastPen makes
          no network requests except downloading the model on first run, and that's verifiable:

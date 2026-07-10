@@ -72,7 +72,7 @@
       <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
       FastPen
     </div>
-    <nav class="lang"><a href="./">EN</a><a class="act" href="hu.html">HU</a></nav>
+    <nav class="lang"><a href="index.html">EN</a><a class="act" href="hu.html">HU</a></nav>
   </header>
 
   <div class="hero">
@@ -81,7 +81,8 @@
       beszélj, és a szöveg megjelenik bármelyik alkalmazásban — levélben, Wordben, böngészőben, chatben.</p>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       Letöltés Windowsra — ingyenes</a>
-    <div class="meta">v0.1.1 · Windows 10/11 (64 bit) · 9 MB ·
+    <div class="meta">v0.2.0 · Windows 10/11 (64 bit) · 9,5 MB ·
+      <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">32 bites változat</a> ·
       <a href="https://github.com/fastpen-app/fastpen/releases">összes kiadás</a></div>
 
     <div class="demo">
@@ -95,16 +96,16 @@
     <div class="grid">
       <div class="card"><h3><span class="ic">🔒</span>100%-ban a gépeden</h3>
         <p>A beszédfelismerés a saját gépeden fut. Se felhő, se fiók, se előfizetés — a hangod soha nem hagyja el a számítógépedet.</p></div>
-      <div class="card"><h3><span class="ic">🌍</span>25 nyelv, magyarul is</h3>
-        <p>Az NVIDIA Parakeet v3 modelljével: magyar, angol, német, francia, spanyol és még 20 nyelv — automatikus nyelvfelismeréssel és írásjelekkel.</p></div>
+      <div class="card"><h3><span class="ic">🌍</span>Két modell, 25 nyelv</h3>
+        <p>Whisper turbo: a legpontosabb, vegyes magyar–angol szöveghez is. Parakeet: a leggyorsabb, 25 nyelv automatikus felismeréssel. Mindkettőt egy kattintásra letölti az app.</p></div>
+      <div class="card"><h3><span class="ic">🗣️</span>Hangparancsok</h3>
+        <p>Mondd: „küldés” — és lenyomódik az Enter. Van „sortörés”, „tabulátor” és „visszatörlés” is: diktálás és küldés teljesen kéz nélkül.</p></div>
+      <div class="card"><h3><span class="ic">✨</span>AI-utótisztítás</h3>
+        <p>Opcionális helyi AI (Ollama) szépíti az átiratot, és az egyéni szótárad alapján a márkaneveket, szakszavakat pontos írásmóddal írja. Ez is a gépeden fut.</p></div>
       <div class="card"><h3><span class="ic">⚡</span>Közel valós idejű</h3>
         <p>A szöveg abban a pillanatban megjelenik, ahogy szünetet tartasz. Hat másodpercnyi beszédet kb. 0,2 mp alatt ír át egy modern processzor.</p></div>
-      <div class="card"><h3><span class="ic">⌨️</span>Mindenhol működik</h3>
-        <p>A FastPen abba az ablakba gépel, amelyik éppen aktív — mint egy nagyon gyors, láthatatlan billentyűzet.</p></div>
-      <div class="card"><h3><span class="ic">∞</span>Nincs korlát</h3>
-        <p>A te processzorod dolgozik — annyit diktálsz, amennyit akarsz. Se szószám, se havi keret, se prémium csomag.</p></div>
-      <div class="card"><h3><span class="ic">📦</span>Pici letöltés</h3>
-        <p>Az app 9 MB. A beszédfelismerő modellt (~465 MB) első indításkor automatikusan letölti.</p></div>
+      <div class="card"><h3><span class="ic">⌨️</span>Mindenhol, korlátok nélkül</h3>
+        <p>A FastPen abba az ablakba gépel, amelyik éppen aktív. A te processzorod dolgozik — se szószám, se havi keret, se prémium csomag.</p></div>
     </div>
   </section>
 
@@ -117,29 +118,70 @@
     </div>
   </section>
 
+  <section id="tips">
+    <h2>Tippek a legjobb eredményhez</h2>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🎤</span>Mikrofon 5–10 cm-re</h3>
+        <p>A mikrofontávolság többet számít minden beállításnál. A legjobb választás egy
+           boom-karos headset: a távolság fix, a minőség egyenletes. A FastPent egy
+           Poly Blackwire 3210 USB headsettel teszteljük.</p></div>
+      <div class="card"><h3><span class="ic">🧠</span>Modellt a feladathoz</h3>
+        <p>A legpontosabb magyar szöveget a Whisper turbo adja, a felismerés nyelvét magyarra
+           rögzítve — és a vegyes magyar–angolt is ez bírja. A Parakeet a leggyorsabb:
+           gyengébb géphez és hangparancsokhoz ideális.</p></div>
+      <div class="card"><h3><span class="ic">⏱️</span>Parancs-ritmus</h3>
+        <p>A hangparancsot önmagában mondd ki: mondat — rövid szünet — „küldés”. Így a parancs
+           külön szakaszként érkezik, és biztosan felismerhető.</p></div>
+      <div class="card"><h3><span class="ic">🎚️</span>Headsettel: érzékenység 0,40</h3>
+        <p>Headset-mikrofonnal a beállításokban a VAD-küszöböt érdemes 0,40-re venni;
+           asztali mikrofonnal jó a gyári 0,50.</p></div>
+    </div>
+  </section>
+
   <section>
     <div class="privacy">
       <h2>Alapból privát</h2>
       <p>A FastPenben nincs analitika, nincs telemetria, és az első indításkori modell-letöltésen
          kívül semmilyen hálózati kérést nem küld. Amit mondasz, a memóriában dolgozódik fel,
          begépelődik az alkalmazásodba — aztán nyoma sincs.</p>
+      <p style="margin-top:14px">És a privát nem jelent kompromisszumot: azonos referencia-hanganyagon
+         mérve a FastPen helyi felismerése az érdemi hibák számában döntetlent játszik a Windows
+         beépített, felhős diktálásával.</p>
     </div>
   </section>
 
   <section class="dl" id="download">
     <h2>Letöltés</h2>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
-      FastPen-win64.zip — v0.1.1</a>
+      FastPen-win64.zip — v0.2.0</a>
     <div class="meta">Csomagold ki bárhova, és indítsd a <b>FastPen.exe</b>-t. Windows 10 (1803+) vagy 11 kell, 64 bit, és egy mikrofon.<br>
       Ha „VCRUNTIME140.dll hiányzik” hibát kapsz, telepítsd a
-      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>-t.</div>
+      <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>-t.<br>
+      Régebbi, 32 bites gépre:
+      <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">FastPen-win32.zip</a>
+      — ott a Parakeet modellt ajánljuk.</div>
+  </section>
+
+  <section id="roadmap">
+    <h2>Mi jön</h2>
+    <p style="text-align:center;color:var(--dim);max-width:620px;margin:0 auto 28px">A FastPen aktív fejlesztés alatt áll. Néhány dolog, ami tervben van:</p>
+    <div class="grid">
+      <div class="card"><h3><span class="ic">🗣️</span>Megbízhatóbb hangparancsok</h3>
+        <p>A rövid parancsok (küldés, sortörés, tabulátor) még pontosabb felismerése.</p></div>
+      <div class="card"><h3><span class="ic">🪟</span>Alkalmazás-profilok</h3>
+        <p>Ablakonként testre szabott viselkedés — más beállítás a chathez, más a szövegszerkesztőhöz.</p></div>
+      <div class="card"><h3><span class="ic">✨</span>Pontosabb felismerés</h3>
+        <p>Folyamatos finomítás a magyar és a vegyes nyelvű szövegek pontosságán.</p></div>
+    </div>
   </section>
 
   <section id="support">
     <h2>Támogasd a projektet</h2>
     <div class="privacy">
       <p>A FastPen ingyenes, és egyetlen fejlesztő készíti. Ha időt spórol neked,
-         hamarosan itt tudod majd támogatni a fejlesztést. 💛</p>
+         egy kávéval támogathatod a fejlesztést. 💛</p>
+      <a class="btn" style="margin-top:24px" href="https://ko-fi.com/fastpen" target="_blank" rel="noopener">☕ Támogatom a Ko-fin</a>
+      <p style="margin-top:18px;font-size:.82rem">A FastPen teljesen ingyenes. A támogatás önkéntes, és nem jár érte semmilyen extra funkció, licenc vagy támogatás — csak egy köszönet, ami a további fejlesztést segíti.</p>
     </div>
   </section>
 
@@ -152,12 +194,38 @@
       <p>Nem. A felismerés teljes egészében a processzorodon fut a nyílt Parakeet v3 modellel.
          A modell letöltése után a FastPen internet nélkül is működik.</p></details>
     <details><summary>Milyen nyelveket tud?</summary>
-      <p>25 európai nyelvet, köztük a magyart, angolt, németet, franciát, spanyolt, olaszt,
-         lengyelt, csehet, románt és ukránt. A nyelvet automatikusan felismeri. Whisper-modellekkel
-         még több nyelv érhető el.</p></details>
+      <p>A Parakeet modell 25 európai nyelvet, köztük a magyart, angolt, németet, franciát,
+         spanyolt, olaszt, lengyelt, csehet, románt és ukránt — a nyelvet automatikusan felismeri.
+         A Whisper turbo modellel (az appból letölthető) még több nyelv érhető el, és a nyelv
+         rögzíthető is.</p></details>
+    <details><summary>Melyik modellt válasszam?</summary>
+      <p>A legpontosabb szöveget a Whisper turbo adja — magyar folyószöveghez és vegyes
+         magyar–angol diktáláshoz is ezt ajánljuk, a felismerés nyelvét magyarra rögzítve.
+         A Parakeet (az alapértelmezett) sokszorosan gyorsabb, és a hangparancsokat is ez
+         ismeri fel a legmegbízhatóbban — gyengébb gépen ezt válaszd. Mindkét modellt az app
+         tölti le, amikor kiválasztod (~1 GB, ill. ~465 MB).</p></details>
+    <details><summary>Mik a hangparancsok?</summary>
+      <p>Önmagában, előtte-utána rövid szünettel kimondva: „küldés” (vagy „enter”) → Enter;
+         „sortörés” / „új sor” → Shift+Enter; „tabulátor” → Tab; „visszatörlés” → az utolsó
+         szó törlése. A Parakeet modellel a legmegbízhatóbbak.</p></details>
+    <details><summary>Diktálhatok AI-agenseknek (Claude, Codex)?</summary>
+      <p>Ez az egyik fő felhasználási mód: nyomd a gyorsbillentyűt (akár push-to-talk módban),
+         mondd el a promptot, a végén pedig mondd: „küldés” — és az üzenet kéz nélkül elmegy.
+         Vegyes magyar–angol prompthoz a Whisper turbo ajánlott. Az agensek a nyers átiratot is
+         jól értik, a tisztítás ilyenkor kikapcsolható.</p></details>
     <details><summary>Mik a rendszerkövetelmények?</summary>
       <p>Windows 10 (1803-as vagy újabb verzió) vagy Windows 11, 64 bit. Bármilyen normális, mai
-         processzorral megy — videokártya nem kell. A modell letöltése után kb. 700 MB tárhely.</p></details>
+         processzorral megy — videokártya nem kell. A Parakeet modellel kb. 700 MB tárhely
+         (a Whisper turbóval együtt kb. 1,7 GB). Régebbi, 32 bites Windowsra külön kiadás
+         tölthető le — ott a Parakeet modellt ajánljuk.</p></details>
+    <details><summary>Használhatok Bluetooth-fülest?</summary>
+      <p>Diktáláshoz nem ajánljuk. Amikor a fülhallgató mikrofonja aktív, a Bluetooth
+         kihangosító (hands-free) profilra vált, ami erősen tömörített, telefonos minőségű
+         hangot ad — a felismerés pontossága ettől jelentősen romlik. Windows 10-en erre
+         nincs is kiút (a jobb minőségű LE Audio csak Windows 11-en, kompatibilis füles
+         mellett érhető el). Vezetékes vagy USB-s, boom-karos headsetet ajánlunk. Ha mégis
+         Bluetooth-t használsz: a mikrofon Speciális beállításainál vedd ki a
+         „Hangkiemelések engedélyezése” pipát.</p></details>
     <details><summary>Nyílt forráskódú a FastPen?</summary>
       <p>Jelenleg nem — de az adatvédelmi ígéreteinket nem kell elhinned: ellenőrizni tudod.
          A FastPen az első indításkori modell-letöltésen kívül semmilyen hálózati kérést nem
@@ -165,7 +233,9 @@
          Offline is ugyanúgy működik.</p></details>
     <details><summary>Miért figyelmeztet a Windows indításkor?</summary>
       <p>A FastPen új app egy kis fejlesztőtől, és még nincs kódaláírása, ezért a SmartScreen
-         figyelmeztethet. Kattints: „További információ” → „Futtatás mindenképp”. A kódaláírás tervben van.</p></details>
+         „nem felismert alkalmazás” figyelmeztetést adhat (kék ablak, „Ismeretlen kiadó”).
+         Kattints a „További információ” hivatkozásra, majd a megjelenő „Futtatás mindenképp”
+         gombra. A kódaláírás tervben van.</p></details>
   </section>
 
   <footer>
