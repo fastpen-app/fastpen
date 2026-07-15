@@ -13,4 +13,16 @@
     <xhtml:link rel="alternate" hreflang="hu" href="https://fastpen.app/hu.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fastpen.app/"/>
   </url>
+  <url>
+    <loc>https://fastpen.app/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fastpen.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://fastpen.app/privacy-hu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fastpen.app/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://fastpen.app/privacy-hu.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fastpen.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://fastpen.app/privacy-hu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fastpen.app/privacy.html"/>
+  </url>
 </urlset>

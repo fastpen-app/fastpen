@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — FastPen</title>
+<meta name="description" content="FastPen privacy policy: speech recognition runs entirely on your device. No cloud, no account, no telemetry, no data collection.">
+<link rel="canonical" href="https://fastpen.app/privacy.html">
+<link rel="alternate" hreflang="en" href="https://fastpen.app/privacy.html">
+<link rel="alternate" hreflang="hu" href="https://fastpen.app/privacy-hu.html">
+<link rel="alternate" hreflang="x-default" href="https://fastpen.app/privacy.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
+<meta name="theme-color" content="#181114">
+<style>
+  :root{
+    --bg:#181114; --bg2:#221a1e; --card:#2a2126; --line:#453c38;
+    --text:#f0eae6; --dim:#a09890; --accent:#ff8c2e; --accent2:#ffb066;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+  header{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.15rem;color:var(--text)}
+  .logo svg{border-radius:9px}
+  .lang a{color:var(--dim);margin-left:12px;font-size:.9rem}
+  .lang a.act{color:var(--text);font-weight:600}
+  h1{font-size:2rem;margin:40px 0 6px}
+  .date{color:var(--dim);font-size:.9rem;margin-bottom:32px}
+  h2{font-size:1.25rem;margin:32px 0 10px}
+  p,li{color:var(--dim)}
+  p b,li b{color:var(--text)}
+  ul{margin:8px 0 8px 22px}
+  .tldr{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:8px}
+  .tldr p{color:var(--text)}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;color:var(--dim);font-size:.85rem;
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="index.html" class="logo">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
+      FastPen
+    </a>
+    <nav class="lang"><a class="act" href="privacy.html">EN</a><a href="privacy-hu.html">HU</a></nav>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <div class="date">Effective: 15 July 2026 · Applies to the FastPen Windows application and the fastpen.app website</div>
+
+  <div class="tldr">
+    <p><b>In short:</b> FastPen processes your voice entirely on your own computer. Your audio and
+       your dictated text never leave your device. The app has no accounts, no telemetry, no analytics,
+       and no ads. We do not collect, store, sell or share any personal data — we have no servers that
+       could receive it.</p>
+  </div>
+
+  <h2>What the app processes</h2>
+  <ul>
+    <!-- FRISSITENDO, ha a szegmens-wav-dump diagnosztika elkeszul: akkor a hang
+         opt-in kapcsoloval helyi fajlba MENTHETO lesz - a diagnosztikai naplo
+         mintajara kell atfogalmazni (lasd kontextus\store_bekuldes.md). -->
+    <li><b>Microphone audio.</b> While recording is active (you control it with a hotkey), audio is
+        processed in memory on your device to produce text. Audio is <b>not saved to disk</b> and is
+        <b>never transmitted</b> anywhere.</li>
+    <li><b>Dictated text.</b> The recognized text is typed into the application you choose. In the
+        default "paste" input mode the text passes briefly through the Windows clipboard. FastPen does
+        not log or store your dictated text, with one exception: if you explicitly enable the
+        <b>diagnostic log</b> in Settings, recent transcripts are written to a local text file
+        (<code>fastpen_debug.log</code>) that you can inspect and delete at any time. It never leaves
+        your machine.</li>
+    <li><b>Settings.</b> Your preferences (hotkey, model choice, custom words, etc.) are stored in
+        local files on your device. The Microsoft Store version stores them in your user app data,
+        which Windows removes when you uninstall the app.</li>
+  </ul>
+
+  <h2>Network connections the app makes</h2>
+  <p>FastPen works offline. It makes network requests only in these cases:</p>
+  <ul>
+    <li><b>Speech model download</b> (first run, or when you select a new model): the model files are
+        fetched from public repositories (GitHub, Hugging Face). No personal data is sent — it is an
+        ordinary file download.</li>
+    <li><b>Optional AI cleanup</b>: if you enable it, FastPen talks to an Ollama server running
+        <b>locally on your computer</b> (127.0.0.1) — this traffic never leaves your machine. In the
+        website (portable) edition, FastPen can download and install Ollama for you after you
+        explicitly agree; the Microsoft Store edition never installs third-party software (you install
+        Ollama yourself if you want AI cleanup). When Ollama first downloads its language model, that
+        is again a public file download by Ollama.</li>
+  </ul>
+  <p>There is no telemetry, no crash reporting, no update pinging, and no analytics of any kind in the
+     app. You can verify this: block FastPen with a firewall after the model download — it keeps
+     working.</p>
+
+  <h2>The website and donations</h2>
+  <ul>
+    <li>The <b>fastpen.app</b> website is a static site hosted on GitHub Pages. We run no analytics on
+        it. GitHub, as the hosting provider, may log standard technical data (such as IP addresses) —
+        see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
+    <li><b>Donations</b> are handled by Ko-fi and its payment provider (Stripe) on their own sites,
+        under their own privacy policies. FastPen (the app) knows nothing about them, and we receive
+        no card details.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>FastPen collects no data from anyone, including children.</p>
+
+  <h2>Changes</h2>
+  <p>If we ever change how FastPen handles data, we will update this page and note the change in the
+     release notes before the new version ships.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: <a href="mailto:fastpen@nscomp.hu">fastpen@nscomp.hu</a></p>
+
+  <footer>
+    <div>© 2026 FastPen · Budapest</div>
+    <div><a href="index.html">fastpen.app</a> ·
+         <a href="https://github.com/fastpen-app/fastpen">GitHub</a></div>
+  </footer>
+</div>
+</body>
+</html>

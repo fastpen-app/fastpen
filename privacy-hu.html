@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adatvédelmi tájékoztató — FastPen</title>
+<meta name="description" content="FastPen adatvédelem: a beszédfelismerés teljes egészében a saját gépeden fut. Nincs felhő, nincs fiók, nincs telemetria, nincs adatgyűjtés.">
+<link rel="canonical" href="https://fastpen.app/privacy-hu.html">
+<link rel="alternate" hreflang="en" href="https://fastpen.app/privacy.html">
+<link rel="alternate" hreflang="hu" href="https://fastpen.app/privacy-hu.html">
+<link rel="alternate" hreflang="x-default" href="https://fastpen.app/privacy.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
+<meta name="theme-color" content="#181114">
+<style>
+  :root{
+    --bg:#181114; --bg2:#221a1e; --card:#2a2126; --line:#453c38;
+    --text:#f0eae6; --dim:#a09890; --accent:#ff8c2e; --accent2:#ffb066;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px}
+  header{padding:18px 0;display:flex;justify-content:space-between;align-items:center}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.15rem;color:var(--text)}
+  .logo svg{border-radius:9px}
+  .lang a{color:var(--dim);margin-left:12px;font-size:.9rem}
+  .lang a.act{color:var(--text);font-weight:600}
+  h1{font-size:2rem;margin:40px 0 6px}
+  .date{color:var(--dim);font-size:.9rem;margin-bottom:32px}
+  h2{font-size:1.25rem;margin:32px 0 10px}
+  p,li{color:var(--dim)}
+  p b,li b{color:var(--text)}
+  ul{margin:8px 0 8px 22px}
+  .tldr{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:8px}
+  .tldr p{color:var(--text)}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding:28px 0;color:var(--dim);font-size:.85rem;
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="hu.html" class="logo">
+      <svg width="30" height="30" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#28221f"/><circle cx="16" cy="16" r="7" fill="#ff8c2e"/></svg>
+      FastPen
+    </a>
+    <nav class="lang"><a href="privacy.html">EN</a><a class="act" href="privacy-hu.html">HU</a></nav>
+  </header>
+
+  <h1>Adatvédelmi tájékoztató</h1>
+  <div class="date">Hatályos: 2026. július 15. · A FastPen Windows-alkalmazásra és a fastpen.app honlapra vonatkozik</div>
+
+  <div class="tldr">
+    <p><b>Röviden:</b> a FastPen a hangodat teljes egészében a saját gépeden dolgozza fel. A hangod
+       és a diktált szöveged soha nem hagyja el az eszközödet. Az appban nincs fiók, nincs telemetria,
+       nincs analitika és nincs hirdetés. Semmilyen személyes adatot nem gyűjtünk, nem tárolunk, nem
+       adunk el és nem osztunk meg — nincs is szerverünk, ami fogadhatná.</p>
+  </div>
+
+  <h2>Mit dolgoz fel az app</h2>
+  <ul>
+    <!-- FRISSITENDO, ha a szegmens-wav-dump diagnosztika elkeszul: akkor a hang
+         opt-in kapcsoloval helyi fajlba MENTHETO lesz - a diagnosztikai naplo
+         mintajara kell atfogalmazni (lasd kontextus\store_bekuldes.md). -->
+    <li><b>Mikrofonhang.</b> Amíg a felvétel aktív (te vezérled a gyorsbillentyűvel), a hang a gép
+        memóriájában dolgozódik fel szöveggé. A hang <b>nem kerül lemezre</b>, és <b>soha nem
+        továbbítódik</b> sehová.</li>
+    <li><b>Diktált szöveg.</b> A felismert szöveg abba az alkalmazásba íródik, amelyikbe diktálsz.
+        Az alapértelmezett „beillesztés" módban a szöveg rövid időre a Windows vágólapján halad át.
+        A FastPen nem naplózza és nem tárolja a diktált szöveget, egy kivétellel: ha a beállításokban
+        kifejezetten bekapcsolod a <b>diagnosztikai naplót</b>, a friss átiratok egy helyi
+        szövegfájlba (<code>fastpen_debug.log</code>) íródnak, amit bármikor megnézhetsz és
+        törölhetsz. Ez sem hagyja el a gépedet.</li>
+    <li><b>Beállítások.</b> A beállításaid (gyorsbillentyű, modellválasztás, egyéni szavak stb.)
+        helyi fájlokban tárolódnak. A Microsoft Store-változat a felhasználói app-adatmappát
+        használja, amit a Windows az app eltávolításakor töröl.</li>
+  </ul>
+
+  <h2>Milyen hálózati kapcsolatokat nyit az app</h2>
+  <p>A FastPen offline is működik. Hálózati kérést csak ezekben az esetekben küld:</p>
+  <ul>
+    <li><b>Beszédmodell letöltése</b> (első indításkor, vagy új modell kiválasztásakor): a
+        modellfájlok nyilvános tárolókból (GitHub, Hugging Face) töltődnek le. Személyes adat nem
+        megy ki — ez egy sima fájlletöltés.</li>
+    <li><b>Opcionális AI-utótisztítás</b>: ha bekapcsolod, a FastPen egy a <b>saját gépeden futó</b>
+        Ollama-szerverrel beszélget (127.0.0.1) — ez a forgalom nem hagyja el a gépet. A honlapos
+        (portable) változat kifejezett beleegyezésed után letölti és telepíti neked az Ollamát;
+        a Microsoft Store-változat soha nem telepít külső szoftvert (ott magad telepíted az Ollamát,
+        ha kell az AI-tisztítás). Amikor az Ollama először letölti a nyelvi modelljét, az szintén
+        nyilvános fájlletöltés, amit az Ollama végez.</li>
+  </ul>
+  <p>Az appban nincs telemetria, nincs hibajelentés-küldés, nincs frissítés-pingelés és semmilyen
+     analitika. Ellenőrizheted: a modell-letöltés után tiltsd le a FastPent a tűzfalon — ugyanúgy
+     működik tovább.</p>
+
+  <h2>A honlap és az adományok</h2>
+  <ul>
+    <li>A <b>fastpen.app</b> statikus oldal, a GitHub Pages szolgáltatja. Analitikát nem futtatunk
+        rajta. A GitHub tárhelyszolgáltatóként naplózhat szokásos technikai adatokat (pl.
+        IP-címeket) — lásd a
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub adatvédelmi nyilatkozatát</a>.</li>
+    <li>Az <b>adományokat</b> a Ko-fi és fizetési szolgáltatója (Stripe) kezeli a saját oldalukon,
+        a saját adatvédelmi szabályzatuk szerint. A FastPen (az app) ezekről semmit nem tud, és
+        kártyaadatokat mi nem kapunk.</li>
+  </ul>
+
+  <h2>Gyermekek</h2>
+  <p>A FastPen senkitől — gyermekektől sem — gyűjt adatot.</p>
+
+  <h2>Változások</h2>
+  <p>Ha valaha változna, hogyan kezeli a FastPen az adatokat, ezt az oldalt frissítjük, és a
+     változást az új verzió kiadási jegyzetében is jelezzük, mielőtt megjelenik.</p>
+
+  <h2>Kapcsolat</h2>
+  <p>Adatvédelmi kérdések: <a href="mailto:fastpen@nscomp.hu">fastpen@nscomp.hu</a></p>
+
+  <footer>
+    <div>© 2026 FastPen · Budapest</div>
+    <div><a href="hu.html">fastpen.app</a> ·
+         <a href="https://github.com/fastpen-app/fastpen">GitHub</a></div>
+  </footer>
+</div>
+</body>
+</html>
