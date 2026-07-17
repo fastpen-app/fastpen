@@ -61,12 +61,12 @@
 
   <h2>What the app processes</h2>
   <ul>
-    <!-- FRISSITENDO, ha a szegmens-wav-dump diagnosztika elkeszul: akkor a hang
-         opt-in kapcsoloval helyi fajlba MENTHETO lesz - a diagnosztikai naplo
-         mintajara kell atfogalmazni (lasd kontextus\store_bekuldes.md). -->
     <li><b>Microphone audio.</b> While recording is active (you control it with a hotkey), audio is
         processed in memory on your device to produce text. Audio is <b>not saved to disk</b> and is
-        <b>never transmitted</b> anywhere.</li>
+        <b>never transmitted</b> anywhere, with one exception: if you explicitly enable the
+        <b>diagnostic audio dump</b> (an advanced troubleshooting option, off by default), the audio
+        segments are saved as local .wav files in the app's data folder, which you can inspect and
+        delete at any time. They never leave your machine.</li>
     <li><b>Dictated text.</b> The recognized text is typed into the application you choose. In the
         default "paste" input mode the text passes briefly through the Windows clipboard. FastPen does
         not log or store your dictated text, with one exception: if you explicitly enable the

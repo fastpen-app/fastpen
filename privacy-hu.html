@@ -61,12 +61,12 @@
 
   <h2>Mit dolgoz fel az app</h2>
   <ul>
-    <!-- FRISSITENDO, ha a szegmens-wav-dump diagnosztika elkeszul: akkor a hang
-         opt-in kapcsoloval helyi fajlba MENTHETO lesz - a diagnosztikai naplo
-         mintajara kell atfogalmazni (lasd kontextus\store_bekuldes.md). -->
     <li><b>Mikrofonhang.</b> Amíg a felvétel aktív (te vezérled a gyorsbillentyűvel), a hang a gép
         memóriájában dolgozódik fel szöveggé. A hang <b>nem kerül lemezre</b>, és <b>soha nem
-        továbbítódik</b> sehová.</li>
+        továbbítódik</b> sehová — egyetlen kivétellel: ha kifejezetten bekapcsolod a
+        <b>diagnosztikai hang-mentést</b> (haladó hibakeresési opció, alapból kikapcsolva),
+        a hangszegmensek helyi .wav fájlokba mentődnek az app adatmappájába, ahol bármikor
+        megnézheted és törölheted őket. Ezek sem hagyják el a gépedet.</li>
     <li><b>Diktált szöveg.</b> A felismert szöveg abba az alkalmazásba íródik, amelyikbe diktálsz.
         Az alapértelmezett „beillesztés" módban a szöveg rövid időre a Windows vágólapján halad át.
         A FastPen nem naplózza és nem tárolja a diktált szöveget, egy kivétellel: ha a beállításokban
