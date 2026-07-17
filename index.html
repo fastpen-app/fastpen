@@ -27,7 +27,7 @@
 <meta name="twitter:description" content="Press a hotkey, speak, and your words appear in any Windows app. 100% on-device — no cloud, no account, no limits. Free.">
 <meta name="twitter:image" content="https://fastpen.app/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FastPen","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"Fast, private, on-device dictation for Windows. Press a hotkey, speak, and your words appear in any app. 100% local — no cloud, no account, no limits.","url":"https://fastpen.app/","downloadUrl":"https://github.com/fastpen-app/fastpen/releases/latest","softwareVersion":"0.3.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"FastPen","operatingSystem":"Windows 10, Windows 11","applicationCategory":"UtilitiesApplication","description":"Fast, private, on-device dictation for Windows. Press a hotkey, speak, and your words appear in any app. 100% local — no cloud, no account, no limits.","url":"https://fastpen.app/","downloadUrl":"https://github.com/fastpen-app/fastpen/releases/latest","softwareVersion":"0.3.2","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <style>
   :root{
@@ -106,7 +106,7 @@
       and your words appear in any app — email, Word, browser, chat.</p>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       Download for Windows — free</a>
-    <div class="meta">v0.3.0 · Windows 10/11 (64-bit) · 9.5 MB ·
+    <div class="meta">v0.3.2 · Windows 10/11 (64-bit) · 9.6 MB ·
       <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">32-bit build</a> ·
       <a href="https://github.com/fastpen-app/fastpen/releases">all releases</a></div>
 
@@ -125,8 +125,8 @@
         <p>Whisper turbo: the most accurate, great for mixed-language dictation too. Parakeet: the fastest, 25 languages with automatic detection. Both download in one click, right from the app.</p></div>
       <div class="card"><h3><span class="ic">🗣️</span>Voice commands</h3>
         <p>Say “enter” — and Enter is pressed. “New line”, “tab” and “backspace” work too: dictate and send entirely hands-free. Since v0.3, commands are recognized together with their speech context — far more reliably.</p></div>
-      <div class="card"><h3><span class="ic">✨</span>AI cleanup</h3>
-        <p>An optional local AI (Ollama) polishes the raw transcript and spells your custom words — brand names, jargon — exactly right. This runs on your machine too.</p></div>
+      <div class="card"><h3><span class="ic">✨</span>AI cleanup, two styles</h3>
+        <p>An optional local AI (Ollama) polishes the transcript — with whole-sentence context. <b>Light</b> stays faithful to your words; <b>Compose</b> rewrites more boldly: it resolves self-corrections, formats lists, reconstructs garbled words. This runs on your machine too.</p></div>
       <div class="card"><h3><span class="ic">⚡</span>Near real-time</h3>
         <p>Text appears the moment you pause. Six seconds of speech is transcribed in about 0.2 seconds on a modern CPU.</p></div>
       <div class="card"><h3><span class="ic">⌨️</span>Everywhere, no limits</h3>
@@ -179,7 +179,7 @@
   <section class="dl" id="download">
     <h2>Download</h2>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
-      FastPen-win64.zip — v0.3.0</a>
+      FastPen-win64.zip — v0.3.2</a>
     <div class="meta">Unzip anywhere and run <b>FastPen.exe</b>. Needs Windows 10 (1803+) or 11, 64-bit, and a microphone.<br>
       If you get a “VCRUNTIME140.dll missing” error, install the
       <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>.<br>
@@ -194,10 +194,10 @@
     <div class="grid">
       <div class="card"><h3><span class="ic">🪟</span>Per-app profiles</h3>
         <p>Behavior tailored per window — different settings for chat vs. a text editor.</p></div>
-      <div class="card"><h3><span class="ic">🚀</span>First-run wizard</h3>
-        <p>A built-in guide on first start: microphone setup, command rhythm, model choice.</p></div>
+      <div class="card"><h3><span class="ic">📊</span>Words-per-minute stats</h3>
+        <p>How much you dictated and how much typing time you saved — measured.</p></div>
       <div class="card"><h3><span class="ic">🏪</span>Microsoft Store release</h3>
-        <p>Install from the Store, with automatic updates — and no SmartScreen warning.</p></div>
+        <p>Submitted to the Store — install from there soon, with automatic updates and no SmartScreen warning.</p></div>
     </div>
   </section>
 
@@ -246,6 +246,13 @@
          per sentence depending on your hardware); if you try it on CPU, start with the
          smaller gemma3:4b model. For dictating to AI agents we recommend leaving it
          off — agents understand raw text just fine.</p></details>
+    <details><summary>What’s the difference between Light cleanup and Compose?</summary>
+      <p>Light stays faithful to your words: it punctuates and drops fillers but never
+         rephrases — best for notes, where what you actually said matters. Compose works
+         more boldly: it collapses self-corrections (“on Monday — no wait, Tuesday”),
+         reconstructs garbled words from context, and formats enumerations as lists —
+         best for emails you’ll proofread before sending anyway. Switch anytime in
+         Settings.</p></details>
     <details><summary>Can I dictate to AI agents (Claude, Codex)?</summary>
       <p>That's one of the main use cases: press the hotkey (push-to-talk works great),
          speak your prompt, then say “enter” — and the message is sent hands-free.
