@@ -14,9 +14,11 @@ account, no character limits.
 ## Download
 
 **[⬇ Download FastPen for Windows (free)](https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip)**
+· also on the **[Microsoft Store](https://apps.microsoft.com/detail/9NC9P9W599LP)**
 
 Unzip anywhere and run `FastPen.exe`. Requires Windows 10 (1803+) or 11, 64-bit,
-and a microphone.
+and a microphone. The Store build installs signed by Microsoft and updates
+automatically (new versions may arrive there a few days after the ZIP).
 
 Website: **[fastpen.app](https://fastpen.app)**
 

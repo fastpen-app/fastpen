@@ -52,6 +52,7 @@
        padding:14px 30px;border-radius:12px;font-size:1.05rem}
   .btn:hover{background:var(--accent2);text-decoration:none}
   .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);font-weight:500}
+  .btn.ghost:hover{background:rgba(255,140,46,.08);border-color:var(--accent)}
   .meta{color:var(--dim);font-size:.85rem;margin-top:14px}
   .demo{margin:56px auto 0;max-width:640px;background:var(--bg2);border:1px solid var(--line);
         border-radius:16px;padding:22px 26px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.45)}
@@ -106,7 +107,8 @@
       and your words appear in any app — email, Word, browser, chat.</p>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       Download for Windows — free</a>
-    <div class="meta">v0.3.2 · Windows 10/11 (64-bit) · 9.6 MB ·
+    <a class="btn ghost" style="margin-left:10px" href="https://apps.microsoft.com/detail/9NC9P9W599LP">🏪 Microsoft Store</a>
+    <div class="meta">Portable ZIP — v0.3.2 · Microsoft Store — v0.3.1 · Windows 10/11 (64-bit) ·
       <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">32-bit build</a> ·
       <a href="https://github.com/fastpen-app/fastpen/releases">all releases</a></div>
 
@@ -180,7 +182,12 @@
     <h2>Download</h2>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       FastPen-win64.zip — v0.3.2</a>
-    <div class="meta">Unzip anywhere and run <b>FastPen.exe</b>. Needs Windows 10 (1803+) or 11, 64-bit, and a microphone.<br>
+    <a class="btn ghost" style="margin-left:10px" href="https://apps.microsoft.com/detail/9NC9P9W599LP">
+      🏪 Microsoft Store — v0.3.1</a>
+    <div class="meta">The Store build installs signed by Microsoft (no SmartScreen warning) and
+      updates automatically — in exchange, new versions arrive there a few days later than the
+      ZIP, due to Microsoft's review.<br>
+      Unzip the ZIP anywhere and run <b>FastPen.exe</b>. Needs Windows 10 (1803+) or 11, 64-bit, and a microphone.<br>
       If you get a “VCRUNTIME140.dll missing” error, install the
       <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>.<br>
       For older 32-bit PCs:
@@ -196,8 +203,8 @@
         <p>Behavior tailored per window — different settings for chat vs. a text editor.</p></div>
       <div class="card"><h3><span class="ic">📊</span>Words-per-minute stats</h3>
         <p>How much you dictated and how much typing time you saved — measured.</p></div>
-      <div class="card"><h3><span class="ic">🏪</span>Microsoft Store release</h3>
-        <p>Submitted to the Store — install from there soon, with automatic updates and no SmartScreen warning.</p></div>
+      <div class="card"><h3><span class="ic">👁️</span>Live preview with AI cleanup</h3>
+        <p>The raw transcript appears in the overlay instantly, and the polished version slides into place — no waiting feeling.</p></div>
     </div>
   </section>
 
@@ -220,6 +227,15 @@
       <p>Yes. FastPen is free for business and commercial use too — including AI cleanup and
          every other feature, with no restrictions. See LICENSE.txt in the package for
          details.</p></details>
+    <details><summary>ZIP or Microsoft Store — which should I pick?</summary>
+      <p>Same app, two channels. The <a href="https://apps.microsoft.com/detail/9NC9P9W599LP">Store build</a>
+         installs signed by Microsoft (no SmartScreen warning) and updates automatically.
+         The portable ZIP lives in a single folder, no installer — and usually gets new
+         versions a few days earlier, since Store updates go through Microsoft's review.
+         One difference: the Store build can't install Ollama (used for AI cleanup) by
+         itself — there you install Ollama manually from
+         <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>
+         (the ZIP build handles that on its own).</p></details>
     <details><summary>Does my voice get uploaded anywhere?</summary>
       <p>No. Recognition runs entirely on your CPU using the open Parakeet v3 model.
          FastPen works offline once the model is downloaded.</p></details>
@@ -278,7 +294,10 @@
          working offline.</p></details>
     <details><summary>Why does Windows warn me when I run it?</summary>
       <p>FastPen is a new app from a small developer and isn't code-signed yet, so SmartScreen
-         may show a warning. Click “More info” → “Run anyway”. Code signing is planned.</p></details>
+         may show a warning. Click “More info” → “Run anyway”. Code signing is planned.
+         To skip this entirely, install the
+         <a href="https://apps.microsoft.com/detail/9NC9P9W599LP">Store build</a> —
+         it arrives signed by Microsoft, with no warning.</p></details>
   </section>
 
   <footer>

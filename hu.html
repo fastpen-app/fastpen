@@ -51,6 +51,8 @@
   .btn{display:inline-block;background:var(--accent);color:#1a1005;font-weight:700;
        padding:14px 30px;border-radius:12px;font-size:1.05rem}
   .btn:hover{background:var(--accent2);text-decoration:none}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);font-weight:500}
+  .btn.ghost:hover{background:rgba(255,140,46,.08);border-color:var(--accent)}
   .meta{color:var(--dim);font-size:.85rem;margin-top:14px}
   .demo{margin:56px auto 0;max-width:640px;background:var(--bg2);border:1px solid var(--line);
         border-radius:16px;padding:22px 26px;text-align:left;box-shadow:0 20px 60px rgba(0,0,0,.45)}
@@ -105,7 +107,8 @@
       beszélj, és a szöveg megjelenik bármelyik alkalmazásban — levélben, Wordben, böngészőben, chatben.</p>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       Letöltés Windowsra — ingyenes</a>
-    <div class="meta">v0.3.2 · Windows 10/11 (64 bit) · 9,6 MB ·
+    <a class="btn ghost" style="margin-left:10px" href="https://apps.microsoft.com/detail/9NC9P9W599LP?hl=hu-HU&amp;gl=HU">🏪 Microsoft Store</a>
+    <div class="meta">Portable ZIP — v0.3.2 · Microsoft Store — v0.3.1 · Windows 10/11 (64 bit) ·
       <a href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win32.zip">32 bites változat</a> ·
       <a href="https://github.com/fastpen-app/fastpen/releases">összes kiadás</a></div>
 
@@ -179,7 +182,12 @@
     <h2>Letöltés</h2>
     <a class="btn" href="https://github.com/fastpen-app/fastpen/releases/latest/download/FastPen-win64.zip">
       FastPen-win64.zip — v0.3.2</a>
-    <div class="meta">Csomagold ki bárhova, és indítsd a <b>FastPen.exe</b>-t. Windows 10 (1803+) vagy 11 kell, 64 bit, és egy mikrofon.<br>
+    <a class="btn ghost" style="margin-left:10px" href="https://apps.microsoft.com/detail/9NC9P9W599LP?hl=hu-HU&amp;gl=HU">
+      🏪 Microsoft Store — v0.3.1</a>
+    <div class="meta">A Store-változat a Microsoft aláírásával települ (nincs SmartScreen-figyelmeztetés)
+      és automatikusan frissül — cserébe az új verziók a Microsoft ellenőrzése miatt oda pár nappal
+      később érkeznek, mint a ZIP-be.<br>
+      A ZIP-et csomagold ki bárhova, és indítsd a <b>FastPen.exe</b>-t. Windows 10 (1803+) vagy 11 kell, 64 bit, és egy mikrofon.<br>
       Ha „VCRUNTIME140.dll hiányzik” hibát kapsz, telepítsd a
       <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Microsoft VC++ redistributable</a>-t.<br>
       Régebbi, 32 bites gépre:
@@ -195,8 +203,8 @@
         <p>Ablakonként testre szabott viselkedés — más beállítás a chathez, más a szövegszerkesztőhöz.</p></div>
       <div class="card"><h3><span class="ic">📊</span>Szó/perc statisztika</h3>
         <p>Mennyit diktáltál, és mennyi gépelési időt spóroltál — mérve.</p></div>
-      <div class="card"><h3><span class="ic">🏪</span>Microsoft Store-kiadás</h3>
-        <p>Beküldve a Store-ba — hamarosan onnan is telepíthető, automatikus frissítésekkel és SmartScreen-figyelmeztetés nélkül.</p></div>
+      <div class="card"><h3><span class="ic">👁️</span>Élő előnézet AI-tisztításnál</h3>
+        <p>A nyers átirat azonnal megjelenik az átfedő ablakban, és a kisimított változat simul a helyére — várakozás-érzés nélkül.</p></div>
     </div>
   </section>
 
@@ -219,6 +227,15 @@
       <p>Igen. A FastPen üzleti és kereskedelmi használatra is ingyenes — az AI-utótisztítással
          és minden más funkcióval együtt, korlátozás nélkül. A részletek a csomagban található
          LICENSE.txt-ben olvashatók.</p></details>
+    <details><summary>ZIP vagy Microsoft Store — melyiket válasszam?</summary>
+      <p>Ugyanaz az app, két csatornán. A <a href="https://apps.microsoft.com/detail/9NC9P9W599LP?hl=hu-HU&amp;gl=HU">Store-változat</a>
+         a Microsoft aláírásával települ (nincs SmartScreen-figyelmeztetés) és automatikusan
+         frissül. A portable ZIP egy mappában él, telepítő nélkül — és az új verziókat általában
+         pár nappal korábban kapja, mert a Store-frissítés a Microsoft ellenőrzésén megy át.
+         Egy különbség: a Store-változat az AI-utótisztításhoz használt Ollamát nem tudja magától
+         telepíteni — ott az Ollamát kézzel kell feltenned az
+         <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>-ról
+         (a ZIP-es változat ezt magának elintézi).</p></details>
     <details><summary>Feltöltődik valahová a hangom?</summary>
       <p>Nem. A felismerés teljes egészében a processzorodon fut a nyílt Parakeet v3 modellel.
          A modell letöltése után a FastPen internet nélkül is működik.</p></details>
@@ -279,7 +296,9 @@
       <p>A FastPen új app egy kis fejlesztőtől, és még nincs kódaláírása, ezért a SmartScreen
          „nem felismert alkalmazás” figyelmeztetést adhat (kék ablak, „Ismeretlen kiadó”).
          Kattints a „További információ” hivatkozásra, majd a megjelenő „Futtatás mindenképp”
-         gombra. A kódaláírás tervben van.</p></details>
+         gombra. A kódaláírás tervben van. Ha ezt el akarod kerülni: a
+         <a href="https://apps.microsoft.com/detail/9NC9P9W599LP?hl=hu-HU&amp;gl=HU">Store-változat</a>
+         a Microsoft aláírásával érkezik, figyelmeztetés nélkül.</p></details>
   </section>
 
   <footer>
